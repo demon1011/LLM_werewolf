@@ -31,8 +31,16 @@ def choose_advice(round_count,step,skill,char,strategy):
         return '无'
     else:
         i=len(advices)
-        res_index=random.randint(0,i-1)
-        return advices[res_index].val['游戏建议']
+        result=''
+        res_index=[]
+        for j in range(3):
+            res_index.append(random.randint(0,i-1))
+        for k in list(set(res_index)):
+            status=advices[k].val['游戏局面'].split('###')
+            contents=advices[k].val['游戏建议'].split('###')
+            for m in range(len(status)):
+                result+="<建议>如果当前的游戏局面是:"+status[m]+"可以参考的建议是:"+contents[m]+"</建议>\n"
+        return result
 def night_werewolf_kill(werewolves,round_count):
     input_2_json_llm=base_llm("你是一个从对话内容提取json字符串的小助手，可以根据提示从对话中精准提取信息，并以规定的json格式返回")
     print("夜晚狼人开始行动：")

@@ -58,7 +58,10 @@ class memory_admin():
         return self.pg.query(condition_vertex=lambda x: x['Type'] == 'Strategy' and x['character'] == character)
     def consult_advice(self,src_strategy,search_dict):
         #搜索一个对应的行为建议
-        res=self.find_vertex(filter_type='src',src_filter=src_strategy,relation_type='HasAdvice',filter_dict=search_dict)
+        ##抛开strategy限制
+        res=self.find_vertex(filter_type='type',type_name='advice',filter_dict=search_dict)
+        #################
+#        res=self.find_vertex(filter_type='src',src_filter=src_strategy,relation_type='HasAdvice',filter_dict=search_dict)
         return res
     def consult_team_strategy(self):
         #搜索一个对应的团队策略
