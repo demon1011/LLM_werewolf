@@ -1,7 +1,7 @@
-# 基于verbalized off-policy RL的自进化狼人杀Agent
+# 基于context engineering的自进化狼人杀Agent
 
 ## 简介
-这个小项目的主要是通过狼人杀游戏验证基于self-reflection的off-policy reinforcement learning能否在没有人类专家监督的帮助下通过自我总结提高能力(本项目中评估Agent能力的关键指标为游戏胜率)。
+这个小项目的主要是通过狼人杀游戏验证基于self-reflection的off-policy reinforcement learning能否在完全没有人类专家监督的帮助下通过自我总结提高能力(本项目中评估Agent能力的关键指标为游戏胜率)。
 为了简化流程，本游戏相比正常的狼人杀游戏会少很多环节，主要规则如下：
 - 游戏的狼人杀游戏为8人局，3神(预言家、女巫、猎人)、2村民和3狼人，狼人的胜利条件为屠单边；
 - 游戏中没有竞选警长和移交警徽流的环节；
